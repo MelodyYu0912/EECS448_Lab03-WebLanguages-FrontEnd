@@ -1,0 +1,67 @@
+<html>
+  <head>
+    <title> Slide Show </title>
+    <style>
+      img{
+        width:400px;
+        height:500px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <img src="E:\EECS448\Yu-2870165-Lab03\images\1.jpg" id="img"/>
+    <br>
+    <button type="button" onclick=showimg(0) value="Previous">Previous</button>
+    <button type="button" onclick=showimg(1) value="Next">Next</button>
+
+    <script>
+      var index=1;
+      function showimg(x)
+      {
+        var img=document.getElementById("img");
+        //=====================get the img object so that the source can be changed===============================//
+
+        if (x == 1)
+        {
+          index++;
+        }
+        else if (x == 0)
+        {
+          index--;
+        }
+        //===================Indicating go for previous/next pic=====================//
+
+        if (index>5)
+        {
+          index=1;
+        }
+
+        if (index<1)
+        {
+          index=5;
+        }
+        //===================prevent index from out of bound================================//
+
+        switch(index)
+        {
+          case 1:
+            img.src="E:\EECS448\Yu-2870165-Lab03\images\1.jpg";
+            break;
+          case 2:
+            img.src="E:\EECS448\Yu-2870165-Lab03\images\2.jpg";
+            break;
+          case 3:
+            img.src="E:\EECS448\Yu-2870165-Lab03\images\3.jpg";
+            break;
+          case 4:
+            img.src="E:\EECS448\Yu-2870165-Lab03\images\4.jpg";
+            break;
+          case 5:
+            img.src="E:\EECS448\Yu-2870165-Lab03\images\5.jpg";
+            break;
+        }
+      }
+    </script>
+  </body>
+</html>
