@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <title> Password Validator </title>
+  </head>
+
+  <body>
+    Creat a password (At Least 8 Characters Long):<br>
+    <input type="password" id="InitialPassword"><br>
+    Re-enter your password:<br>
+    <input type="password" id="VerifyPassword"><br>
+    <br>
+    <button type="button" onclick=validate() value="Validate">Validate</button><br>
+    <br>
+
+      <script>
+        function validate()
+        {
+          var x = document.getElementById('InitialPassword').value;
+          var y = document.getElementById('VerifyPassword').value;
+
+          if (x.length < 8)
+          {
+            if (x == y)
+            {
+              alert("The length of your password should be at least 8 characters!");
+            }
+            else
+            {
+              alert("The length of your password should be at least 8 characters!");
+              alert("The password you input doesn`t match!");
+            }
+          }
+          else
+          {
+            if (x == y)
+            {
+              alert("Password Validated!");
+            }
+            else
+            {
+              alert("The password you input doesn`t match!");
+            }
+          }
+        }
+      </script>
+  </body>
+</html>
