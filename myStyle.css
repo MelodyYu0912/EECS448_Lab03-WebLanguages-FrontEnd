@@ -1,0 +1,62 @@
+body{
+  background-color: rgb(255, 221, 153);
+}
+
+#title{
+  font-family: arial;
+  font-size: 30pt;
+  font-weight: 900;
+  text-align: center;
+}
+
+#video{
+  text-align: center;
+  padding: 10px;
+}
+
+#img{
+  float:right;
+  display: inline;
+  padding-right: 25px;
+}
+
+#words{
+  float:left;
+  display:inline;
+  padding-left: 25px;
+}
+
+#words::before{
+  background-image: url(E:/EECS448/Yu-2870165-Lab03/images/GS2.jpg);
+  height: 450px;
+  width: 700px;
+  background-size: 100% 100%;
+  position: absolute;
+  content: "";
+  z-index: -1;
+  -webkit-filter: blur(3px);
+  filter:blur(3px);
+  opacity: 0.4;
+}
+
+p{
+  font-size: 17pt;
+  font-weight: 500;
+  line-height: 25pt;
+  padding-left: 15px;
+}
+
+p.biography{
+  color: #994d00;
+  font-family: verdana;
+}
+
+p.biography:hover{
+  color: #000000;
+  font-family: verdana;
+  font-weight: 600;
+}
+
+p.hyperlink{
+  font-weight: 400;
+}
