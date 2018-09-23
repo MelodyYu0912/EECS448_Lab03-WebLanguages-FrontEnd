@@ -1,0 +1,86 @@
+<html>
+  <head>
+    <title> Dummy Text </title>
+    <link href="myStyle2.css"
+          rel="stylesheet"
+          type="text/css"/>
+  </head>
+
+  <body>
+    <div id="title">
+      DUMMY TEXT
+    </div>
+
+    <div id="paragraph">
+      <p class="text">
+        Dummy Text   Dummy Text   Dummy Text   Dummy Text <br>
+        Dummy Text   Dummy Text   Dummy Text   Dummy Text <br>
+        Dummy Text   Dummy Text   Dummy Text   Dummy Text <br>
+        Dummy Text   Dummy Text   Dummy Text   Dummy Text <br>
+        Dummy Text   Dummy Text   Dummy Text   Dummy Text <br>
+        Dummy Text   Dummy Text   Dummy Text   Dummy Text <br>
+        Dummy Text   Dummy Text   Dummy Text   Dummy Text <br>
+        Dummy Text   Dummy Text   Dummy Text   Dummy Text <br>
+        Dummy Text   Dummy Text   Dummy Text   Dummy Text <br>
+        Dummy Text   Dummy Text   Dummy Text   Dummy Text <br>
+        Dummy Text   Dummy Text   Dummy Text   Dummy Text <br>
+        Dummy Text   Dummy Text   Dummy Text   Dummy Text <br>
+        Dummy Text   Dummy Text   Dummy Text   Dummy Text <br>
+        Dummy Text   Dummy Text   Dummy Text   Dummy Text <br>
+      </p>
+    </div>
+
+    <div id="choice">
+      <p class="border"> Choose a color for the border: (Red / Green / Blue) </p>
+      <input type="text" id="border"> <br>
+      <p class="bg"> Choose a color for the background color: (Red / Green / Blue) </p>
+      <input type="text" id="bg"> <br>
+      <br>
+      <button type="button" onclick=changeColor() value="Change">Change</button> <br>
+    </div>
+
+    <script>
+      function changeColor()
+      {
+        var paragraph = document.getElementById("paragraph");
+        var border = document.getElementById("border");
+        var bg = document.getElementById("bg");
+
+        if ((border.value == "Red") || (border.value == "red"))
+        {
+          paragraph.style.borderColor = "rgb(255, 77, 77)";
+        }
+        else if ((border.value == "Green") || (border.value == "green"))
+        {
+          paragraph.style.borderColor = "rgb(0, 179, 0)";
+        }
+        else if ((border.value == "Blue") || (border.value == "blue"))
+        {
+          paragraph.style.borderColor = "rgb(51, 51, 255)";
+        }
+        else
+        {
+          alert("The color you input is not an option");
+        }
+
+        if ((bg.value == "Red") || (bg.value == "red"))
+        {
+          paragraph.style.backgroundColor = "rgb(255, 153, 153)";
+        }
+        else if ((bg.value == "Green") || (bg.value == "green"))
+        {
+          paragraph.style.backgroundColor = "rgb(153, 230, 153)";
+        }
+        else if ((bg.value == "Blue") || (bg.value == "blue"))
+        {
+          paragraph.style.backgroundColor = "rgb(128, 179, 255)";
+        }
+        else
+        {
+          alert("The color you input is not an option");
+        }
+      }
+
+    </script>
+  </body>
+</html>
