@@ -31,11 +31,25 @@
     </div>
 
     <div id="choice">
-      <p class="border"> Choose a color for the border: (Red / Green / Blue) </p>
-      <input type="text" id="border"> <br>
-      <p class="bg"> Choose a color for the background color: (Red / Green / Blue) </p>
-      <input type="text" id="bg"> <br>
+      <p class="border"> Choose a color for the border: </p>
+      <p class="hint">  Units in decimal, range [0, 255] </p>
+      Red:&nbsp&nbsp&nbsp&nbsp<input type="text" id="r_border"> <br>
+      Green:&nbsp<input type="text" id="g_border"> <br>
+      Blue:&nbsp&nbsp&nbsp&nbsp<input type="text" id="b_border"> <br>
       <br>
+
+      <p class="width"> Choose a width for the border: </p>
+      <p class="hint">  Units in pixel, defalut is 2 pixel. </p>
+      Width:&nbsp<input type="text" id="width"> <br>
+      <br>
+
+      <p class="bg"> Choose a color for the background: </p>
+      <p class="hint">  Units in decimal, range [0, 255] </p>
+      Red:&nbsp&nbsp&nbsp&nbsp<input type="text" id="r_bg"> <br>
+      Green:&nbsp<input type="text" id="g_bg"> <br>
+      Blue:&nbsp&nbsp&nbsp&nbsp<input type="text" id="b_bg"> <br>
+      <br>
+
       <button type="button" onclick=changeColor() value="Change">Change</button> <br>
     </div>
 
@@ -43,41 +57,48 @@
       function changeColor()
       {
         var paragraph = document.getElementById("paragraph");
-        var border = document.getElementById("border");
-        var bg = document.getElementById("bg");
+        var r_border = document.getElementById("r_border").value;
+        var g_border = document.getElementById("g_border").value;
+        var b_border = document.getElementById("b_border").value;
+        var width = document.getElementById("width").value;
+        var r_bg = document.getElementById("r_bg").value;
+        var g_bg = document.getElementById("g_bg").value;
+        var b_bg = document.getElementById("b_bg").value;
 
-        if ((border.value == "Red") || (border.value == "red"))
+        paragraph.style.borderWidth = width + "px";
+
+        if ((r_border > 255) || (r_border < 0))
         {
-          paragraph.style.borderColor = "rgb(255, 77, 77)";
+          alert("The number for red border is not in the range");
         }
-        else if ((border.value == "Green") || (border.value == "green"))
+        else if ((g_border > 255) || (g_border < 0))
         {
-          paragraph.style.borderColor = "rgb(0, 179, 0)";
+          alert("The number for green border is not in the range");
         }
-        else if ((border.value == "Blue") || (border.value == "blue"))
+        else if ((b_border > 255) || (b_border < 0))
         {
-          paragraph.style.borderColor = "rgb(51, 51, 255)";
+          alert("The number for blue border is not in the range");
         }
         else
         {
-          alert("The color you input is not an option");
+          paragraph.style.borderColor = "rgb(" + r_border + "," + g_border + "," + b_border + ")";
         }
 
-        if ((bg.value == "Red") || (bg.value == "red"))
+        if ((r_bg > 255) || (r_bg < 0))
         {
-          paragraph.style.backgroundColor = "rgb(255, 153, 153)";
+          alert("The number for red background is not in the range");
         }
-        else if ((bg.value == "Green") || (bg.value == "green"))
+        else if ((g_bg > 255) || (g_bg < 0))
         {
-          paragraph.style.backgroundColor = "rgb(153, 230, 153)";
+          alert("The number for green background is not in the range");
         }
-        else if ((bg.value == "Blue") || (bg.value == "blue"))
+        else if ((b_bg > 255) || (b_border < 0))
         {
-          paragraph.style.backgroundColor = "rgb(128, 179, 255)";
+          alert("The number for blue background is not in the range");
         }
         else
         {
-          alert("The color you input is not an option");
+          paragraph.style.backgroundColor = "rgb(" + r_bg + "," + g_bg + "," + b_bg + ")";
         }
       }
 
