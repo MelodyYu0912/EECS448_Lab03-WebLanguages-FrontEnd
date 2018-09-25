@@ -27,7 +27,7 @@ body{
 }
 
 #words::before{
-  background-image: url(E:/EECS448/Yu-2870165-Lab03/images/GS2.jpg);
+  background-image: url(images/GS2.jpg);
   height: 450px;
   width: 700px;
   background-size: 100% 100%;
